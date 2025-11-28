@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Matrimony - Multi Step Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <!-- Progress -->
+      <div class="progress-text" id="progressText">Step 1 of 4</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <form id="multiStepForm">
+        <!-- ===== STEP 1: Profile For ===== -->
+        <div class="form-step" data-step="1">
+          <div class="step-title">This Profile Is For</div>
+          <div class="step-subtitle">Select who you are creating this profile for</div>
+
+          <div class="form-group">
+            <div class="radio-group">
+              <label class="radio-pill">
+                <input type="radio" name="profileFor" value="Myself" required /> Myself
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="profileFor" value="Son" /> Son
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="profileFor" value="Daughter" /> Daughter
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="profileFor" value="Brother" /> Brother
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="profileFor" value="Sister" /> Sister
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="profileFor" value="Relative" /> Relative
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="profileFor" value="Friend" /> Friend
+              </label>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <!-- No Previous on first step -->
+            <span></span>
+            <button type="button" class="btn-next" onclick="nextStep()">Next</button>
+          </div>
+        </div>
+
+        <!-- ===== STEP 2: Name + DOB ===== -->
+        <div class="form-step hidden" data-step="2">
+          <div class="step-title">Basic Details</div>
+          <div class="step-subtitle">Tell us your name and date of birth</div>
+
+          <div class="form-group">
+            <label for="firstName">First Name*</label>
+            <input type="text" id="firstName" name="firstName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name*</label>
+            <input type="text" id="lastName" name="lastName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth*</label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+
+          <div class="buttons">
+            <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
+            <button type="button" class="btn-next" onclick="nextStep()">Next</button>
+          </div>
+        </div>
+
+        <!-- ===== STEP 3: Religion + Community + Country ===== -->
+        <div class="form-step hidden" data-step="3">
+          <div class="step-title">Religious & Location Details</div>
+          <div class="step-subtitle">Help us show better matches</div>
+
+          <div class="form-group">
+            <label for="religion">Religion*</label>
+            <select id="religion" name="religion" required>
+              <option value="">Select Religion</option>
+              <option value="Hindu">Hindu</option>
+              <option value="Muslim">Muslim</option>
+              <option value="Christian">Christian</option>
+              <option value="Sikh">Sikh</option>
+              <option value="Jain">Jain</option>
+              <option value="Buddhist">Buddhist</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="community">Community / Caste*</label>
+            <input type="text" id="community" name="community" placeholder="Eg: Reddy, Agarwal, etc." required />
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country You Live In*</label>
+            <select id="country" name="country" required>
+              <option value="">Select Country</option>
+              <option value="India">India</option>
+              <option value="USA">United States</option>
+              <option value="UK">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="buttons">
+            <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
+            <button type="button" class="btn-next" onclick="nextStep()">Next</button>
+          </div>
+        </div>
+
+        <!-- ===== STEP 4: Email + Mobile ===== -->
+        <div class="form-step hidden" data-step="4">
+          <div class="step-title">Contact Details</div>
+          <div class="step-subtitle">We’ll send OTP and match alerts here</div>
+
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label>Mobile Number*</label>
+            <div class="phone-row">
+              <input
+                type="text"
+                id="countryCode"
+                name="countryCode"
+                value="+91"
+                required
+              />
+              <input
+                type="text"
+                id="mobile"
+                name="mobile"
+                placeholder="Enter mobile number"
+                required
+              />
+            </div>
+            <div class="note">An OTP will be sent to this number for verification.</div>
+          </div>
+
+          <div class="buttons">
+            <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
+            <button type="submit" class="btn-submit">Submit & Continue</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Link external JS -->
+  <script src="register.js"></script>
+</body>
+</html>

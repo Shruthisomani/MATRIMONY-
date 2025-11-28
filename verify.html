@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Verify Identity - Matrimony</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="step-title">Identity Verification</div>
+      <div class="step-subtitle">
+        Upload your government ID and a live selfie to verify your profile
+      </div>
+
+      <form id="verifyForm">
+        <div class="form-group">
+          <label for="govId">Upload Government ID*</label>
+          <input type="file" id="govId" required />
+          <div class="note">Accepted: Aadhaar, PAN, Passport, etc.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="selfie">Upload Selfie*</label>
+          <input type="file" id="selfie" required />
+          <div class="note">Make sure your face is clearly visible.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="otp">Enter OTP*</label>
+          <input type="text" id="otp" placeholder="Enter 6-digit OTP" required />
+          <div class="note">OTP will be sent to your registered mobile number.</div>
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="btn-prev" onclick="goBackToRegister()">
+            Back to Register
+          </button>
+          <button type="submit" class="btn-submit">Verify & Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="verify.js"></script>
+</body>
+</html>
