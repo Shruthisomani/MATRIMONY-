@@ -11,8 +11,14 @@
 <body>
   <div class="wrapper">
     <div class="card">
+
+      <!-- Profile Image (same place for all steps, image will change using JS) -->
+      <div class="profile-center">
+        <img id="stepImage" src="images/profile1.png" alt="Profile Picture">
+      </div>
+
       <!-- Progress -->
-      <div class="progress-text" id="progressText">Step 1 of 4</div>
+      <div class="progress-text" id="progressText">1 of 5</div>
       <div class="progress-bar">
         <div class="progress-fill" id="progressFill"></div>
       </div>
@@ -29,50 +35,49 @@
                 <input type="radio" name="profileFor" value="Myself" required /> Myself
               </label>
               <label class="radio-pill">
-                <input type="radio" name="profileFor" value="Son" /> Son
+                <input type="radio" name="profileFor" value="My Son" /> My Son
               </label>
               <label class="radio-pill">
-                <input type="radio" name="profileFor" value="Daughter" /> Daughter
+                <input type="radio" name="profileFor" value=" My Daughter" />My Daughter
               </label>
               <label class="radio-pill">
-                <input type="radio" name="profileFor" value="Brother" /> Brother
+                <input type="radio" name="profileFor" value="My Brother" /> My Brother
               </label>
               <label class="radio-pill">
-                <input type="radio" name="profileFor" value="Sister" /> Sister
+                <input type="radio" name="profileFor" value="My Sister" /> My Sister
               </label>
               <label class="radio-pill">
-                <input type="radio" name="profileFor" value="Relative" /> Relative
+                <input type="radio" name="profileFor" value="My Relative" /> My Relative
               </label>
               <label class="radio-pill">
-                <input type="radio" name="profileFor" value="Friend" /> Friend
+                <input type="radio" name="profileFor" value="My Friend" /> My Friend
               </label>
             </div>
           </div>
 
           <div class="buttons">
-            <!-- No Previous on first step -->
             <span></span>
             <button type="button" class="btn-next" onclick="nextStep()">Next</button>
           </div>
         </div>
 
-        <!-- ===== STEP 2: Name + DOB ===== -->
+        <!-- STEP 2 -->
         <div class="form-step hidden" data-step="2">
           <div class="step-title">Basic Details</div>
           <div class="step-subtitle">Tell us your name and date of birth</div>
 
           <div class="form-group">
-            <label for="firstName">First Name*</label>
+            <label for="firstName" style="font-weight: bold;">First Name*</label>
             <input type="text" id="firstName" name="firstName" required />
           </div>
 
           <div class="form-group">
-            <label for="lastName">Last Name*</label>
+            <label for="lastName" style="font-weight: bold;">Last Name*</label>
             <input type="text" id="lastName" name="lastName" required />
           </div>
 
           <div class="form-group">
-            <label for="dob">Date of Birth*</label>
+            <label for="dob" style="font-weight: bold;">Date of Birth*</label>
             <input type="date" id="dob" name="dob" required />
           </div>
 
@@ -82,34 +87,88 @@
           </div>
         </div>
 
-        <!-- ===== STEP 3: Religion + Community + Country ===== -->
+        <!-- STEP 3 -->
         <div class="form-step hidden" data-step="3">
           <div class="step-title">Religious & Location Details</div>
           <div class="step-subtitle">Help us show better matches</div>
 
           <div class="form-group">
-            <label for="religion">Religion*</label>
+            <label for="religion" style="font-weight: bold;">Religion*</label>
             <select id="religion" name="religion" required>
-              <option value="">Select Religion</option>
+              <option value="" disabled selected>Select Religion</option>
               <option value="Hindu">Hindu</option>
               <option value="Muslim">Muslim</option>
               <option value="Christian">Christian</option>
               <option value="Sikh">Sikh</option>
               <option value="Jain">Jain</option>
               <option value="Buddhist">Buddhist</option>
+              <option value="Jewish">Jewish</option>
+              <option value="Parsi">Parsi</option>
+              <option value="Spiritual-not Religious">Spiritual-not Religious</option>
+              <option value="No religion">No religion</option>
+              <option value="Other">Other</option>
+          </select>
+          </div>
+
+          <div class="form-group">
+            <label for="community" style="font-weight: bold;">Community / Caste*</label>
+            <select id="community" name="community" required>
+              <option value="" disabled selected>Select Community</option>
+              <option value="Frequently used Communities" style="font-weight:bold;">Frequently used Communities</option>
+              <option value="Hindi">Hindi</option>
+              <option value="Marathi">Marathi</option>
+              <option value="Gujarati">Gujarati</option>
+              <option value="Punjabi">Punjabi</option>
+              <option value="Tamil">Tamil</option>
+              <option value="Telugu">Telugu</option>
+              <option value="Kannada">Kannada</option>
+              <option value="Malayalam">Malayalam</option>
+              <option value="Odia">Odia</option>
+              <option value="Bengali">Bengali</option>
+              <option value="Assamese">Assamese</option>
+              <option value="All Communities" style="font-weight:bold;">All Communities</option>
+               <option value="Aka">Aka</option>
+               <option value="Arabic">Arabic</option>
+              <option value="Arunachali">Arunachali</option>
+              <option value="Awadhi">Awadhi</option>
+              <option value="Baluchi">Baluchi</option>
+               <option value="Bhojpuri">Bhojpuri</option>
+               <option value="Bhutia">Bhutia</option>
+              <option value="Brahul">Brahul</option>
+             <option value="Brij">Brij</option>
+               <option value="Burmese">Burmese</option>
+              <option value="Chattisgarhi">Chattisgarhi</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Coorgi">Coorgi</option>
+               <option value="Dogri">Dogri</option>
+               <option value="English">English</option>
+              <option value="French">French</option>
+              <option value="Garhwali">Garhwali</option>
+             <option value="Garo">Garo</option>
+             <option value="Haryanavi">Haryanavi</option>
+               <option value="Himachali/Pahari">Himachali/Pahari</option>
+              <option value="Hindko">Hindko</option>
+             <option value="Kashmiri">Kashmiri</option>
+              <option value="Konkani">Konkani</option>
+              <option value="Maithili">Maithili</option>
+            <option value="Manipuri">Manipuri</option>
+            <option value="Mizo">Mizo</option>
+            <option value="Nepali">Nepali</option>
+           <option value="Persian">Persian</option>
+            <option value="Rajasthani">Rajasthani</option>
+             <option value="Sanskrit">Sanskrit</option>
+             <option value="Sindhi">Sindhi</option>
+             <option value="Sinhala">Sinhala</option>
+             <option value="Spanish">Spanish</option>
+             <option value="Urdu">Urdu</option>
               <option value="Other">Other</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="community">Community / Caste*</label>
-            <input type="text" id="community" name="community" placeholder="Eg: Reddy, Agarwal, etc." required />
-          </div>
-
-          <div class="form-group">
-            <label for="country">Country You Live In*</label>
+            <label for="country" style="font-weight: bold;">Country You Live In*</label>
             <select id="country" name="country" required>
-              <option value="">Select Country</option>
+              <option value="" disabled selected>Select Country</option>
               <option value="India">India</option>
               <option value="USA">United States</option>
               <option value="UK">United Kingdom</option>
@@ -125,47 +184,52 @@
           </div>
         </div>
 
-        <!-- ===== STEP 4: Email + Mobile ===== -->
+        <!-- STEP 4 -->
         <div class="form-step hidden" data-step="4">
           <div class="step-title">Contact Details</div>
           <div class="step-subtitle">We’ll send OTP and match alerts here</div>
 
           <div class="form-group">
-            <label for="email">Email*</label>
+            <label for="email" style="font-weight: bold;">Email*</label>
             <input type="email" id="email" name="email" required />
           </div>
 
           <div class="form-group">
-            <label>Mobile Number*</label>
+            <label for="Mobile Number" style="font-weight: bold;">Mobile Number*</label>
             <div class="phone-row">
-              <input
-                type="text"
-                id="countryCode"
-                name="countryCode"
-                value="+91"
-                required
-              />
-              <input
-                type="text"
-                id="mobile"
-                name="mobile"
-                placeholder="Enter mobile number"
-                required
-              />
+              <input type="text" id="countryCode" name="countryCode" value="   " required />
+              <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" required />
             </div>
             <div class="note">An OTP will be sent to this number for verification.</div>
           </div>
-          <div class="form-group">
-          <label for="otp">Enter OTP*</label>
-          <input type="text" id="otp" placeholder="Enter 6-digit OTP" required />
-          <div class="note"> Enter the OTP sent to your registered mobile number.</div>
-        </div>
-
           <div class="buttons">
             <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
-            <button type="submit" class="btn-submit">Submit & Continue</button>
-          </div>
+            <button type="button" class="btn-next" onclick="nextStep()">Next</button>
         </div>
+        </div>
+
+
+        <!--step 5-->
+        <div class="form-step hidden" data-step="5">
+           <div class="step-title">OTP Verification</div>
+      <div class="step-subtitle">
+        We have sent a 6-digit OTP to your mobile number:<br>
+        <strong>   <span id="mobileDisplay"></span></strong>
+      </div>
+
+      <div class="form-group">
+        <label for="otp" style="font-weight: bold;">Enter OTP*</label>
+        <input type="text" id="otp" placeholder="Enter 6-digit OTP" />
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="btn-prev" onclick="goBack()">Back</button>
+        <button type="button" class="btn-submit" onclick="verifyOtp()">Verify OTP</button>
+      </div>
+        </div>
+
+
+
       </form>
     </div>
   </div>

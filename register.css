@@ -174,3 +174,29 @@ button {
   margin-top: 4px;
 }
 
+
+.profile-center {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-center img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
